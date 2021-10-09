@@ -8,7 +8,7 @@ before_install:
 script:
   - docker run -e CI=true avidocker001/react-test npm run test -- --watchAll=false
 
-after_install:
+after_success:
   - docker build -t avidocker001/multi-client ./client
   - docker build -t avidocker001/multi-nginx ./nginx
   - docker build -t avidocker001/multi-server ./server
