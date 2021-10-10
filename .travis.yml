@@ -11,10 +11,10 @@ script:
 after_success:
   - docker build -t avidocker001/multi-client ./client
   - docker build -t avidocker001/multi-nginx ./nginx
-  - docker build -t avidocker001/multi-server ./server
+  - docker build -t avidocker001/multi-api ./server
   - docker build -t avidocker001/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push avidocker001/multi-client
   - docker push avidocker001/multi-nginx
-  - docker push avidocker001/multi-server
+  - docker push avidocker001/multi-api
   - docker push avidocker001/multi-worker
