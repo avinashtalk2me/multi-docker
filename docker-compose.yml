@@ -1,7 +1,7 @@
 version: '3'
 services:
   client:
-    image: "avidocker001/mutli-client"
+    image: "avidocker001/multi-client"
     hostname: client
     mem_limit: 128m
   server:
@@ -24,7 +24,7 @@ services:
       - REDIS_PORT=$REDIS_PORT
       - REDIS_HOST=$REDIS_HOST
   nginx:
-    image: "avidocker001/nginx"
+    image: "avidocker001/multi-nginx"
     mem_limit: 128m
     hostname: nginx
     ports:
